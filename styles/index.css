@@ -29,6 +29,8 @@
 
 .row-first {
     flex: 0 0 30%;  
+    color: white;
+    text-align: left;
   }
 .row-second {
     flex: 0 0 70%;  
@@ -60,17 +62,17 @@
 
 
 .box{
-position: relative;
-height: 30px;
-width: 30px;
-border: 1px solid black;
-padding: 5px;
-cursor: default;
-text-align: center;
-font-family: "Helvetica", "Arial", sans-serif;
-font-size: 15pt;
-margin:8px;
-border-radius:50%; 
-color: #ffffff;
-background-color: rgba(128, 128, 128, 0.377);
+   position: relative;
+   height: 30px;
+   width: 30px;
+   border: 1px solid black;
+   padding: 5px;
+   cursor: default;
+   text-align: center;
+   font-family: "Helvetica", "Arial", sans-serif;
+   font-size: 15pt;
+   margin:8px;
+   border-radius:50%; 
+   color: #ffffff;
+   background-color: rgba(128, 128, 128, 0.377);
 }
