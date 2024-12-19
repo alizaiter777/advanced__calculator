@@ -8,12 +8,12 @@
     justify-content: center;
     align-items: center; 
     height: 100vh; 
-    background-color:black;
+    background-color:white;
 }
 .C-box{
     width: 300px;
-    height: 400px;
-    background-color:black;
+    height: 450px;
+    background-color:white;
     border: 5px  ; 
     border-style: solid;
     border-color: #db9334;
@@ -28,13 +28,23 @@
 }
 
 .row-first {
-    flex: 0 0 30%;  
-    color: white;
+    flex: 0 30% 0 ;  
+    color: black;
     text-align: left;
+    align-self: end;
+    
+   
+  }
+  .log{
+    color: black;
+    align-self: end;
+    
+
   }
 .row-second {
     flex: 0 0 70%;  
     display: flex;
+    position: relative;
   }
 
 .column {
@@ -47,11 +57,11 @@
    flex-direction: column;
 }
 
-.row-second .column:last-child .inner-row {
+.row-second .column:last-child .in-row {
     background-color:orange; 
 }
 
-.inner-row {
+.in-row {
     flex: 1; 
     display: flex;
     justify-content: center;
@@ -67,12 +77,13 @@
    width: 30px;
    border: 1px solid black;
    padding: 5px;
-   cursor: default;
+   cursor: pointer;
    text-align: center;
    font-family: "Helvetica", "Arial", sans-serif;
    font-size: 15pt;
    margin:8px;
    border-radius:50%; 
    color: #ffffff;
-   background-color: rgba(128, 128, 128, 0.377);
+   background-color: rgba(128, 128, 128, 0.781);
 }
+
