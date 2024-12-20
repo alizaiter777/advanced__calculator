@@ -26,6 +26,7 @@
     font-size: 18px;
     color: black;
     flex-direction: column;
+    margin-right: 350px;
 }
 
 .row-first {
