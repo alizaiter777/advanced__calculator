@@ -3,16 +3,17 @@ let n1;
 let n2;
 let log;
 let box;
-let rslt;
 let mode;
-let boxes;
-let screen;
 let moon;
-let final = [];
-let container;
-let C_box;
-let restart;
+let rslt;
 let dark;
+let boxes;
+let C_box;
+let screen;
+let restart;
+let Lightmoon;
+let container;
+let final = [];
 
 
 mode = document.getElementById('mode');
@@ -38,11 +39,13 @@ log.innerHTML = 0;
 restart = document.getElementById('restart');
 restart.addEventListener('click', Restart);
 
-dark=document.getElementById('dark');
-dark.addEventListener('click',LightMode)
+dark = document.getElementById('dark');
+dark.addEventListener('click', LightMode)
 
 
 moon = document.getElementById('moon');
+moon.addEventListener('click', LightMode);
+
 document.addEventListener("DOMContentLoaded", () => {
     moon = false;
     mode.innerHTML = 'PostFix';
@@ -50,58 +53,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
 C_box = document.getElementsByClassName('C_box');
 container = document.getElementsByClassName('container');
-moon.addEventListener('click', LightMode);
-let Lightmoon = document.getElementsByClassName('Lightmoon')
-function LightMode(){
+
+Lightmoon = document.getElementsByClassName('Lightmoon')
+
+//
+function LightMode() {
+    //initialize moon = false 
+    //onclick moon = true 
     moon = !moon;
+    //if moon true enter (if) :click to dark mode
     if (moon) {
         container[0].style.background = 'black';
         C_box[0].style.background = 'black';
         console.log(C_box);
         screen.style.color = 'white';
         log.style.color = 'white';
-        dark.style.display='block';
-        Lightmoon[0].style.display='none';
+        dark.style.display = 'block';
+        Lightmoon[0].style.display = 'none';
         console.log("moon", Lightmoon);
     }
+    //light mode
     else {
         container[0].style.background = 'white';
         C_box[0].style.background = 'white';
         console.log(C_box);
         screen.style.color = 'black';
         log.style.color = 'black';
-        dark.style.display='none';
-        Lightmoon[0].style.display='block';
+        dark.style.display = 'none';
+        Lightmoon[0].style.display = 'block';
 
-       
+
 
     }
 }
-
-
-
-
+//add click event for every box
 boxes.forEach(box => {
     box.addEventListener('click', () => {
+        //display on screen the box value
         screen.innerHTML += box.textContent;
+        //add to stack box value
         final.push(box.textContent);
         console.log(final);
     });
 });
-
+//restart by sending empty stack
 function Restart() {
     final = [];
     log.innerHTML = 0;
     screen.innerHTML = '';
 }
+//click on postfix dropbtn ,replace the text with postfix
 function PostTitle() {
     mode.innerHTML = 'PostFix';
 }
-
+//click on prifix dropbtn,replace the text with prifix
 function PriTitle() {
     mode.innerHTML = 'PriFix';
 }
-
+// select the stack direction with respect for which mode selected
 function Mode() {
     if (mode.innerHTML == "PostFix") {
         Post();
@@ -113,6 +122,7 @@ function Mode() {
 
 function Delete() {
     final.pop();
+    //after delete ,redisplay the final stack on screen with space btwn
     screen.innerHTML = final.join(' ');
     log.innerHTML = 0;
     console.log(final);
@@ -121,15 +131,16 @@ function Delete() {
 function Post() {
     let stack = [];
     console.log(final);
-
+    //loop to execute all stack items 
     for (let i = 0; i < final.length; i++) {
         let index = final[i];
-
+        //if normal nb add to stack
         if (!isNaN(index)) {
             stack.push(parseFloat(index));
         }
 
         else {
+            //b = removed index
             let b = stack.pop();
             console.log(b)
             let a = stack.pop();
@@ -145,19 +156,21 @@ function Post() {
                 result = a * b;
             }
             else if (index === '/') {
+                //don't let the dominator = 0
                 if (b === 0) {
-                    console.error("division by zero");
+                    console.error("can't division by zero");
                     log.innerHTML = "error";
                     return;
                 }
                 result = a / b;
             }
-
+            //add result to stack
             stack.push(result);
         }
     }
-
+    //if stack contain more than 1 index then there is an error since after calculation should return 1 result
     if (stack.length === 1) {
+        //after check stack length is 1 we check if the 1 index is not a nmbr else dispaly result
         if (isNaN(stack[0])) {
             log.innerHTML = "error"
         }
@@ -174,10 +187,10 @@ function Post() {
 function Pri() {
     let stack2 = [];
     console.log(final);
-
+     //excute all stack items in reversed way 
     for (let i = final.length - 1; i >= 0; i--) {
         let index2 = final[i];
-
+        //check if index is number then add to stack
         if (!isNaN(index2)) {
             stack2.push(parseFloat(index2));
         }
@@ -197,7 +210,7 @@ function Pri() {
             }
             else if (index2 === '/') {
                 if (b === 0) {
-                    console.error("division by zero");
+                    console.error("can't division by zero");
                     log.innerHTML = "error";
                     return;
                 }
