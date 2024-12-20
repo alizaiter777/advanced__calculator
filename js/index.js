@@ -4,13 +4,20 @@ let n2;
 let log;
 let box;
 let rslt;
+let mode;
 let boxes;
 let screen;
 let final=[];
 
+mode=document.getElementById('mode');
+postmode=document.getElementById('postfix');
+postmode.addEventListener('click',PostTitle);
+
+primode=document.getElementById('prifix');
+primode.addEventListener('click',PriTitle);
 
 rslt=document.getElementById('result');
-rslt.addEventListener('click',Pri);
+rslt.addEventListener('click',Mode);
 
 box=document.getElementsByClassName('.box')
 boxes = document.querySelectorAll('.in-row:not(.exclude)');
@@ -31,7 +38,22 @@ log.innerHTML = 0;
             });
         });
 
-     
+function PostTitle(){
+    mode.innerHTML='Postfix';
+}
+
+function PriTitle(){
+    mode.innerHTML='PriFix';
+}
+
+function Mode(){
+    if(mode.innerHTML=="PostFix"){
+        Post();
+    }
+    else{
+        Pri();
+    }
+}
 
 function Delete(){
     final.pop();
