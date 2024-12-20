@@ -1,20 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 .container {
-    display: flex; 
+    display: flex;
     justify-content: center;
-    align-items: center; 
-    height: 100vh; 
-    background-color:white;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
 }
-.C-box{
+
+.C_box {
     width: 300px;
     height: 450px;
-    background-color:white;
-    border: 5px  ; 
+    background-color: white;
+    border: 5px;
     border-style: solid;
     border-color: #db9334;
     border-radius: 8px;
@@ -23,47 +24,51 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    color:black;
+    color: black;
     flex-direction: column;
 }
 
 .row-first {
-    flex:30% ;  
+    flex: 30%;
     color: black;
     text-align: left;
-    
-   
-  }
-  .log{
+
+
+}
+
+.log {
     color: black;
     align-self: end;
-    
 
-  }
-  #screen{
+
+}
+
+#screen {
     margin-top: 50px;
-  }
+
+}
+
 .row-second {
-    flex: 0 70%;  
+    flex: 0 70%;
     display: flex;
-  }
+}
 
 .column {
-   flex: 1; 
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 14px;
-   padding: 10px;
-   flex-direction: column;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 10px;
+    flex-direction: column;
 }
 
 .row-second .column:last-child .in-row {
-    background-color:orange; 
+    background-color: orange;
 }
 
 .in-row {
-    flex: 1; 
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,58 +77,59 @@
 }
 
 
-.box{
-   position: relative;
-   height: 30px;
-   width: 30px;
-   border: 1px solid black;
-   padding: 5px;
-   cursor: pointer;
-   text-align: center;
-   font-family: "Helvetica", "Arial", sans-serif;
-   font-size: 15pt;
-   margin:8px;
-   border-radius:50%; 
-   color: #ffffff;
-   background-color: rgba(128, 128, 128, 0.781);
+.box {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 15pt;
+    margin: 8px;
+    border-radius: 50%;
+    color: #ffffff;
+    background-color: rgba(128, 128, 128, 0.781);
 }
 
 .navbar {
-    position:fixed;
+    position: fixed;
     top: 0;
     width: 100%;
-    background:rgba(128, 128, 128, 0.068); 
+    background: lavender;
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 0 ; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
 }
 
 .navbar-item {
-    text-align: center; 
+    text-align: center;
     margin-left: 100px;
     padding-right: 100px;
-  }
+}
 
-#name{
+#name {
     font-size: x-large;
-  }
+}
 
 .navbar-item:first-child {
     text-align: left;
-    
-  }
-  
+
+}
+
 .navbar-item:last-child {
-    text-align: right; 
-   
-  }
+    text-align: right;
+
+}
+
 .navbar-item ul {
     list-style: none;
     padding: 0;
     display: flex;
-    margin: 0 ;
-    
+    margin: 0;
+
 }
 
 
@@ -135,7 +141,7 @@
     text-decoration: none;
     color: black;
     font-size: 22px;
-    
+
     display: block;
 }
 
@@ -145,6 +151,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 li.dropdown {
@@ -155,8 +162,9 @@ li.dropdown {
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    cursor: pointer;
 }
 
 .dropdown-content a {
@@ -168,12 +176,13 @@ li.dropdown {
 }
 
 .dropdown-content a:hover {
-    background-color:orange;
+    background-color: orange;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-  
-  
+.Lightmoon .darkMoon{
+    cursor: pointer;
+}

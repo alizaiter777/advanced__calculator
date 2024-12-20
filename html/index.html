@@ -1,65 +1,74 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Advanced calculater</title>
-		<link href="../styles/index.css"  rel="stylesheet" />
-	</head>
+
+<head>
+    <title>Advanced calculater</title>
+    <link href="../styles/index.css" rel="stylesheet" />
+</head>
 
 <body>
 
     <nav class="navbar">
         <p class="navbar-item" id="name">Advanced Calculater</p>
-       <div class="navbar-item">
-        <h1  id="mode"  >PostFix </h1>
+        <div class="navbar-item">
+            <h1 id="mode">PostFix </h1>
         </div>
-        <div  class="navbar-item">
-           
-           <ul >
-            <li class="dropdown">
-                <a  class="dropbtn">Mode</a>
-                <div class="dropdown-content">
-                    <a  id="postfix">PostFix</a>
-                    <a  id="prifix">PriFix</a>
-                </div>
-            </li>
-            
+        <div class="navbar-item">
+
+            <ul>
+                <li class="dropdown">
+                    <a class="dropbtn">Mode</a>
+                    <div class="dropdown-content">
+                        <a id="postfix">PostFix</a>
+                        <a id="prifix">PriFix</a>
+                    </div>
+                </li>
+
         </div>
-        <div class="navbar-item" >
-           
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
-                    <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
-                  </svg>
-                </div>
-               </ul>
-               
+        <div class="navbar-item">
+       <div id="moon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-moon Lightmoon" viewBox="0 0 16 16">
+                <path
+                    d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
+            </svg>
+        </div>
+     <div id="dark" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill darkMoon" viewBox="0 0 16 16">
+                <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+              </svg>
             </div>
         </div>
-        
-       
-        </nav>
+        </ul>
+
+        </div>
+        </div>
+
+
+    </nav>
 
     <div class="container">
-        
 
-        <div class="C-box">
-            <div class="row-first" id="screen"> 
+
+        <div class="C_box">
+            <div class="row-first" id="screen">
             </div>
 
             <div class="log" id="log">
             </div>
 
-            <div class="row-second"> 
+            <div class="row-second">
 
                 <div class="column">
-                    <div class="in-row exclude , box "  id="delete" >D</div>
-                    <div class="in-row , box" > 7</div>
+                    <div class="in-row exclude , box " id="delete">D</div>
+                    <div class="in-row , box"> 7</div>
                     <div class="in-row , box"> 4</div>
                     <div class="in-row , box"> 1</div>
-                    <div class="in-row exclude , box">R</div>
+                    <div class="in-row exclude , box" id="restart">R</div>
                 </div>
 
                 <div class="column">
-                    <div class="in-row , box" > </div>
+                    <div class="in-row , box"> </div>
                     <div class="in-row , box">8</div>
                     <div class="in-row , box">5</div>
                     <div class="in-row , box">2</div>
@@ -74,8 +83,8 @@
                     <div class="in-row , box"></div>
                 </div>
 
-                <div class="column" >
-                    <div class="in-row , box" >/</div>
+                <div class="column">
+                    <div class="in-row , box">/</div>
                     <div class="in-row , box">x</div>
                     <div class="in-row , box">-</div>
                     <div class="in-row , box">+</div>
@@ -86,6 +95,7 @@
         </div>
     </div>
 </body>
-    
-    <script src="../js/index.js"></script>
+
+<script src="../js/index.js"></script>
+
 </html>
